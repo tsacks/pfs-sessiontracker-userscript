@@ -8,4 +8,4 @@ A quick userscript to create json files out of PFS games played.
 5. Go to https://tracker.campaigncodex.com/, then log into your account.  Then go to the import tool (https://tracker.campaigncodex.com/#/import) and paste in your json
 6. Kick back and enjoy!
 
-![alt text](opened_example.png "In action")
+![alt text](screenshot.png "In action")
