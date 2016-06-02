@@ -5,6 +5,7 @@
 // @version      0.3
 // @description  Downloads PFS Sessions as JSON file
 // @author       Michael Tracey
+// @inlcude https://secure.paizo.com/people/*
 // @include https://secure.paizo.com/people/*/sessions
 // @require http://code.jquery.com/jquery-latest.js
 // @require     http://lightswitch05.github.io/table-to-json/javascripts/jquery.tabletojson.min.js
