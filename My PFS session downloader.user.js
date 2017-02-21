@@ -143,6 +143,7 @@ function copy(e) {
                 });
                 var str = JSON.stringify(outputjson, undefined, 4);
                 var final = str.replace(/\\/g, "");
+                final = final.replaceAll("^\"|\"$", ""); // strip chrome's quotes
                 // final = final.substr(1);
                 // final = final.substr(0, final.length-1);
                 console.log(final);
