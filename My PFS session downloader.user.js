@@ -2,7 +2,7 @@
 // @id         My-PFS-session-downloader
 // @name         My PFS session downloader
 // @namespace    http://tampermonkey.net/
-// @version      0.3
+// @version      0.4
 // @description  Downloads PFS Sessions as JSON file
 // @author       Michael Tracey
 // @inlcude https://secure.paizo.com/people/*
@@ -85,14 +85,16 @@ function copy(e) {
                         }
                     }
                 });
+                var outputjson = [];
                 $.each(tablejson, function(i, item) {
                     if (tablejson[i].Scenario.length === 0){
                         console.log("REMOVING EMPTY ROW");
-                        delete tablejson[i];
+                        // delete tablejson[i];
+                        // tablejson.splice(i, 1);
                         return true;
                     }
                     if (tablejson[i].date.length === 0){
-                        delete tablejson[i];
+                        // delete tablejson[i];
                         return true;
                     }
                     if (tablejson[i].Scenario.indexOf("(PFC)") !=-1) {
@@ -137,8 +139,9 @@ function copy(e) {
                     tablejson[i].EventName = tablejson[i].EventName.replace(/"/g, '&quot;');
                     tablejson[i].GM = tablejson[i].GM.replace(/"/g, '&quot;');
                     tablejson[i].ScenarioName = tablejson[i].ScenarioName.replace(/"/g, '&quot;');
+                    outputjson.push(tablejson[i]);
                 });
-                var str = JSON.stringify(tablejson, undefined, 4);
+                var str = JSON.stringify([outputjson], undefined, 4);
                 var final = str.replace(/\\/g, "");
                 final = final.substr(1);
                 final = final.substr(0, final.length-1);
