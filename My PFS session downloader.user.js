@@ -141,10 +141,10 @@ function copy(e) {
                     tablejson[i].ScenarioName = tablejson[i].ScenarioName.replace(/"/g, '&quot;');
                     outputjson.push(tablejson[i]);
                 });
-                var str = JSON.stringify([outputjson], undefined, 4);
+                var str = JSON.stringify(outputjson, undefined, 4);
                 var final = str.replace(/\\/g, "");
-                final = final.substr(1);
-                final = final.substr(0, final.length-1);
+                // final = final.substr(1);
+                // final = final.substr(0, final.length-1);
                 console.log(final);
                 $("#export_sessiontracker").hide();
                 $("#sessiontracker_overlay > .player_results").html("<textarea id='player_json' class='player_json' style='width:80%; border: 1px solid black;'>"+ final +"</textarea><br /><a href='#' data-copytarget='#player_json'>Copy Data to Clipboard</a>");
